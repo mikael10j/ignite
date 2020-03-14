@@ -442,10 +442,10 @@ class Engine:
 
                     continue
 
-                self.state.batch = batch
+                # self.state.batch = batch
                 self.state.iteration += 1
                 self._fire_event(Events.ITERATION_STARTED)
-                self.state.output = self._process_function(self, self.state.batch)
+                self.state.output = self._process_function(self, batch)
                 self._fire_event(Events.ITERATION_COMPLETED)
 
                 # TODO: remove refs on batch to avoid high mem consumption ? -> need verification
